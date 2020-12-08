@@ -12,7 +12,6 @@
   "scripts": {
     "start": "webpack-cli serve --mode=development --config=./sample/webpack.config.js --hot --open='Google Chrome'",
     "build": "webpack --config=./sample/webpack.config.js",
-    "publish": "./bin/publish.sh",
     "lint": "lint-staged"
   },
   "bugs": {
