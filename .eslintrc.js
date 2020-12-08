@@ -65,7 +65,14 @@ module.exports = {
             },
         },
         {
-            files: ['.eslintrc.js', 'webpack.config.js'],
+            files: ['./sample/**/*.ts', './sample/**/*.tsx'],
+            parserOptions: {
+                tsconfigRootDir: path.resolve(__dirname, './sample'),
+                project: [path.resolve(__dirname, './sample/tsconfig.json')],
+            },
+        },
+        {
+            files: ['.eslintrc.js', 'webpack.config.js', 'rollup.config.js'],
             env: {
                 node: true,
             },

@@ -10,12 +10,15 @@ for (let i = 0; i < 100000; i++) {
 }
 
 export function VirtualList(): React.ReactElement {
-    const virtualListData = useVirtualList({ itemHeight: 32, items: DUMMY_ITEMS });
+    const { setContainer, visibleItems, scrollHeight } = useVirtualList({
+        items: DUMMY_ITEMS,
+        itemHeight: 32,
+    });
 
     return (
-        <div ref={virtualListData.setContainer} style={{ position: 'relative', height: 300, overflow: 'auto', border: '1px solid #000' }}>
-            <div style={{ height: virtualListData.scrollHeight }}>
-                {virtualListData.visibleItems.map((itemData, i) => (
+        <div ref={setContainer} style={{ position: 'relative', height: 300, overflow: 'auto', border: '1px solid #000' }}>
+            <div style={{ height: scrollHeight }}>
+                {visibleItems.map((itemData, i) => (
                     <div key={i} style={{ position: 'absolute', top: itemData.offsetTop, height: 32 }}>
                         Item(index = {itemData.item.index})
                     </div>

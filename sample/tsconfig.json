@@ -11,11 +11,10 @@
     "moduleResolution": "node",
     "removeComments": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "declarationDir": "./build/dist",
     "jsx": "react"
   },
   "include": [
-    "./lib/**/*"
+    "../lib/**/*",
+    "./**/*"
   ]
 }

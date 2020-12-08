@@ -18,7 +18,7 @@ export interface VirtualListData<T> {
     setContainer: (container: HTMLElement | null) => void;
 }
 
-export function useVirtualList<T>(props: VirtualListProps<T>): VirtualListData<T> {
+export const useVirtualList = <T>(props: VirtualListProps<T>): VirtualListData<T> => {
     const { items, itemHeight, hiddenItemCount = 10 } = props;
 
     const onResizeHandlerRef = useRef<(entries: readonly ResizeObserverEntry[]) => void>(() => void 0);
@@ -72,4 +72,4 @@ export function useVirtualList<T>(props: VirtualListProps<T>): VirtualListData<T
     const scrollHeight = items.length * itemHeight;
 
     return { visibleItems, setContainer, scrollHeight };
-}
+};
